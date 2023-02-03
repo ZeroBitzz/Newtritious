@@ -11,14 +11,30 @@
 <body>
     <!-- header -->
     <header>
-        <h1>NEWTRITIOUS</h1>
-
         <!-- login and sign up buttons section -->
         <section>
             <button class="main-page-button">LOG IN</button>
             <button class="main-page-button">SIGN UP</button>
         </section>
     </header>
-    <img src="./assests/images&icons/triangle.svg" id="triangle-img" alt="triangle">
+
+    <!-- animation text container -->
+    <div id="container">
+        <span id="text1"></span>
+        <span id="text2"></span>
+    </div>
+    
+    <svg id="filters">
+        <defs>
+            <filter id="threshold">
+                <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+                      0 1 0 0 0
+                      0 0 1 0 0
+                      0 0 0 255 -140" />
+            </filter>
+        </defs>
+    </svg>
+    
+    <script src="./assests/scripts/text-animation.js"></script>
 </body>
 </html>
