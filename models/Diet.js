@@ -13,26 +13,32 @@ Diet.init(
     },
     paleo: {
       type: BOOLEAN,
+      defaultValue: "paleo",
       allowNull: false,
     },
     vegan: {
       type: BOOLEAN,
+      defaultValue: "vegan",
       allowNull: false,
     },
     vegetarian: {
       type: BOOLEAN,
+      defaultValue: "vegetarian",
       allowNull: false,
     },
     keto: {
       type: BOOLEAN,
+      defaultValue: "keto",
       allowNull: false,
     },
     calorieRestriction: {
       type: BOOLEAN,
+      defaultValue: "calorieRestriction",
       allowNull: false,
     },
     glutenFree: {
       type: BOOLEAN,
+      defaultValue: "glutenFree",
       allowNull: false,
     },
     user_id: {

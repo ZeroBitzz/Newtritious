@@ -13,22 +13,27 @@ Allergies.init(
     },
     peanuts: {
       type: BOOLEAN,
+      defaultValue: "peanuts",
       allowNull: false,
     },
     treeNuts: {
       type: BOOLEAN,
+      defaultValue: "treeNuts",
       allowNull: false,
     },
     lactose: {
       type: BOOLEAN,
+      defaultValue: "lactose",
       allowNull: false,
     },
     gluten: {
       type: BOOLEAN,
+      defaultValue: "gluten",
       allowNull: false,
     },
     shellfish: {
       type: BOOLEAN,
+      defaultValue: "shellfish",
       allowNull: false,
     },
     user_id: {
