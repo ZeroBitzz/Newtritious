@@ -2,11 +2,9 @@
   <label for="allergies">
     Do you have any allergies?
     <select name="allergies" id="allergies">
-      <option value="peanuts">Peanuts</option>
-      <option value="treeNuts">Tree Nuts</option>
-      <option value="lactose">Lactose</option>
-      <option value="gluten">Gluten</option>
-      <option value="shellfish">Shellfish</option>
+      {{#each allergy as |allergy|}}
+      <option value="{{defaultValue}}"></option>
+      {{/each}}
       <option value="no">No</option>
     </select>
   </label>
@@ -15,12 +13,9 @@
   <label for="diet">
     Are you on a specific diet?
     <select name="diet" id="diet">
-      <option value="paleo">Paleo</option>
-      <option value="vegan">Vegan</option>
-      <option value="vegetarian">Vegetarian</option>
-      <option value="keto">Keto</option>
-      <option value="calorieRestriced">Calorie Restricted</option>
-      <option value="glutenFree">Gluten Free</option>
+      {{#each diet as|diet|}}
+      <option value="{{defaultValue}}"></option>
+      {{/each}}
       <option value="no">No</option>
     </select>
   </label>
