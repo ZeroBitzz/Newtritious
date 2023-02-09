@@ -9,7 +9,10 @@ User.hasOne(Allergies, {
   onDelete: "CASCADE",
 });
 Allergies.belongsToMany(User, {
-  foreignKey: "user_id",
+  through: {
+    model: User,
+    unique: false,
+  },
 });
 
 User.hasOne(Calories, {
@@ -17,15 +20,19 @@ User.hasOne(Calories, {
   onDelete: "CASCADE",
 });
 Calories.belongsToMany(User, {
-  foreignKey: "user_id",
+  through: {
+    model: User,
+  },
 });
 
+Cuisine.belongsToMany(User, {
+  through: {
+    model: User,
+  },
+});
 User.hasOne(Cuisine, {
   foreignKey: "user_id",
   onDelete: "CASCADE",
-});
-Cuisine.belongsToMany(User, {
-  foreignKey: "user_id",
 });
 
 User.hasOne(Diet, {
@@ -33,7 +40,9 @@ User.hasOne(Diet, {
   onDelete: "CASCADE",
 });
 Diet.belongsToMany(User, {
-  foreignKey: "user_id",
+  through: {
+    model: User,
+  },
 });
 
 module.exports = { User, Allergies, Calories, Cuisine, Diet };
