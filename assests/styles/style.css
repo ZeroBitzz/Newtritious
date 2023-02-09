@@ -1,63 +1,52 @@
-/* General Tags */
-* {
-    font-family: monospace;
-    color: #03fc77;
+
+
+#aside {
+    padding: 50px;
+    display: block;
+    width: 1000px;
+    height: 1000px;
+    background: rgb(165, 172, 166);
+    float: left;
+    background-image: url(./assets/images&icons/fruit.jpg)
+};
+
+#bodyDiv {display: flex
+};
+
+#rightDiv {
+    display: block;
+    width: fit-content;
+    height: 20px;
+    background: rgb(38, 49, 170);
+    float: left;
 }
 
-body {
-    background-color: #212121;
-    display: flex;
-    flex-direction: column;
+#header {
+    padding: 60px;
+    text-align: right;
+    background: #7adc84;
+    color: white;
+    font-size: 30px;
+};
+
+.headerBtn1 {
+    background-color: #4CAF50;
 }
 
-h1 {
-    font-size: 50px;
-}
-
-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-/* main page classes */
-#triangle-img {
-    width: 800px;
-    height: 800px;
-    animation: rotate 20s infinite linear;
-}
-
-.main-page-button {
-    width: 100px;
-    height: 80px;
-    font-size: 20px;
-    background-color: #03fc77;
-    color: black;
-}
-
-@import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
-
-#container {
-    position: absolute;
-    margin: auto;
-    width: 100vw;
-    height: 80pt;
-    top: 0;
-    bottom: 0;
-
-    filter: url(#threshold) blur(0.6px);
-}
-
-#text1,
-#text2 {
-    position: absolute;
-    width: 100%;
-    display: inline-block;
-
-    font-family: "Raleway", sans-serif;
-    font-size: 80pt;
-
+#asidePtag {
     text-align: center;
+    font-family: fantasy;
+    font-size: 165px;
+    color: rgb(255, 255, 255);
+    text-shadow: -1px -1px 0 #0b532d, 2px -1px 0 #777777, -10px 10px 0 #99d587, 1px 1px 0 #0de7d8;
+};
 
-    user-select: none;
-}
+#rightAside {
+    padding: 50px;
+    display: block;
+    width: 1000px;
+    height: 1000px;
+    background: rgb(235, 19, 19);
+};
+
+

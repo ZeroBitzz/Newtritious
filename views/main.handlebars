@@ -1,15 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./assests/styles/style.css" rel="stylesheet">
-    <link rel="icon" href="./assests/images&icons/triangle.svg">
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-    <title>Newtritious</title>
-</head>
-<body>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Newtrician</title>
+    {{!-- <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script> --}}
+  </head>
+
+  <header id="header">
+    <div id="headerDiv">
+        <button class="headerBtn1">Profile</button>
+        <button class="headerBtn2">My Recipies</button>
+
+    </div>
+  </header>
+  <body id="bodyDiv">
+    <div id="asideDiv">
+    <aside id="aside">
+        <p id="asidePtag" class="animate-character">Create a recipie based on restrictions.</p>
+    </aside>
+    </div>  
     
-</body>
+    <aside id="rightAside">
+        <card class="LoginSignupCard">
+            <p>login/signup</p>
+        </card>
+        <card id="Login card">
+            <p>login</p>
+        </card>
+        <card id="SignupCard">
+            <p>signup</p>
+        </card>
+        <card id = preferencesCard>
+            <p>preferences</p>
+        </card>
+        <card id = generateCard>
+            <p>generate</p>
+        </card>
+    </aside>
+    {{{ body }}}
+  </body>
 </html>
