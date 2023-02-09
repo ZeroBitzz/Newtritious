@@ -12,27 +12,27 @@ Allergies.init(
       autoIncrement: true,
     },
     peanuts: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       defaultValue: "peanuts",
       allowNull: false,
     },
     treeNuts: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       defaultValue: "treeNuts",
       allowNull: false,
     },
     lactose: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       defaultValue: "lactose",
       allowNull: false,
     },
     gluten: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       defaultValue: "gluten",
       allowNull: false,
     },
     shellfish: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       defaultValue: "shellfish",
       allowNull: false,
     },

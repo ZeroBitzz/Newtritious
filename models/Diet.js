@@ -12,32 +12,32 @@ Diet.init(
       autoIncrement: true,
     },
     paleo: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       defaultValue: "paleo",
       allowNull: false,
     },
     vegan: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       defaultValue: "vegan",
       allowNull: false,
     },
     vegetarian: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       defaultValue: "vegetarian",
       allowNull: false,
     },
     keto: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       defaultValue: "keto",
       allowNull: false,
     },
     calorieRestriction: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       defaultValue: "calorieRestriction",
       allowNull: false,
     },
     glutenFree: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       defaultValue: "glutenFree",
       allowNull: false,
     },
