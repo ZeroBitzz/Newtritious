@@ -12,107 +12,107 @@ Cuisine.init(
       autoIncrement: true,
     },
     african: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     american: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     british: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     cajun: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     caribbean: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     chinese: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     easternEuropean: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     european: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     french: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     german: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     greek: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     irish: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     indian: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     italian: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     japanese: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     jewish: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     korean: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     latinAmerican: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     mediterranean: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     mexican: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     middleEastern: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     nordic: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     southern: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     spanish: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     thai: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     vietnamese: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     user_id: {

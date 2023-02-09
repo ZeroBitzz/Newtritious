@@ -28,11 +28,11 @@ User.init(
       },
     },
     hasAllergies: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     onDiet: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     cuisine: {
