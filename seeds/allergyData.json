@@ -1,0 +1,17 @@
+[
+    {
+    "allergy":"peanuts"
+},
+    {
+    "allergy":"treeNuts"
+},
+    {
+    "allergy":"lactose"
+},
+    {
+    "allergy":"gluten"
+},
+    {
+    "allergy":"shellfish"
+}
+]
