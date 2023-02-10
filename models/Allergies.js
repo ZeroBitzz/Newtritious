@@ -11,32 +11,9 @@ Allergies.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    peanuts: {
-      type: DataTypes.BOOLEAN,
+    allergy: {
+      type: DataTypes.STRING,
       allowNull: false,
-    },
-    treeNuts: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-    },
-    lactose: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-    },
-    gluten: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-    },
-    shellfish: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-    },
-    user_id: {
-      type: DataTypes.INTEGER,
-      reference: {
-        model: "user",
-        key: "id",
-      },
     },
   },
   {
@@ -44,7 +21,7 @@ Allergies.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "allergies",
+    modelName: "allergy",
   }
 );
 
