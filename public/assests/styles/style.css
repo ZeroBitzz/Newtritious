@@ -1,3 +1,4 @@
+/* general tags */
 body {
     background-color: rgb(36, 36, 36);
     display: flex;
@@ -6,6 +7,20 @@ body {
     width: 1000px;
     height: 1000px;
 }
+
+/* header */
+#header {
+    padding: 60px;
+    text-align: right;
+    background: #7adc84;
+    color: white;
+    font-size: 30px;
+}
+
+.headerBtn1 {
+    background-color: #4CAF50;
+}
+
 
 #aside {
     padding: 50px;
@@ -28,13 +43,6 @@ body {
     float: left;
 }
 
-#header {
-    padding: 60px;
-    text-align: right;
-    background: #7adc84;
-    color: white;
-    font-size: 30px;
-}
 
 #footer {
     font-size: 50px;
@@ -123,10 +131,6 @@ body {
     background-position: left top;
     background-repeat: repeat;
     padding: 20px;
-}
-
-.headerBtn1 {
-    background-color: #4CAF50;
 }
 
 #asidePtag {
