@@ -1,33 +1,45 @@
-#body {
+body {
+    background-color: rgb(36, 36, 36);
     display: flex;
     padding: 50px;
     display: block;
     width: 1000px;
     height: 1000px;
-    background-image: url(./assets/Plantz.jpg)
-    
 }
-​
+
+#aside {
+    padding: 50px;
+    display: block;
+    width: 1000px;
+    height: 1000px;
+    background: rgb(165, 172, 166);
+    float: left;
+    background-image: url(../images&icons/fruit.jpg)
+}
+
+#bodyDiv {display: flex
+}
+
+#rightDiv {
+    display: block;
+    width: fit-content;
+    height: 20px;
+    background: rgb(38, 49, 170);
+    float: left;
+}
+
 #header {
     padding: 60px;
     text-align: right;
-    background: white;
+    background: #7adc84;
     color: white;
     font-size: 30px;
-    border-radius: 25px;
-    background-position: left top;
-    background-repeat: repeat;
-    padding: 20px;
-    min-width:;
-    position: relative;
-    bottom: 30px;
-​
 }
-​
+
 #footer {
     font-size: 50px;
     position: relative;
-    bottom: -1000px;
+    bottom: -500px;
     border-radius: 25px;
     background-position: left top;
     background-repeat: repeat;
@@ -38,7 +50,7 @@
     background: white;
     text-align: center;
 }
-​
+
 #changeDiet {
     position: relative;
     text-align: center;
@@ -47,7 +59,7 @@
     padding: 50px;
     display: block;
     width: 200px;
-    height: 800px;
+    height: 100px;
     background: rgb(96, 215, 45);
     border-radius: 25px;
     background-position: left top;
@@ -55,7 +67,7 @@
     padding: 20px;
     
 }
-​
+
 #changeAllergies {
     float: left;
     text-align: center;
@@ -65,42 +77,21 @@
     padding: 50px;
     display: block;
     width: 200px;
-    height: 800px;
+    height: 100px;
     background: rgb(207, 217, 25);
     border-radius: 25px;
     background-position: left top;
     background-repeat: repeat;
     padding: 20px;
-​
 }
-​
-#changePassword {
-    float: left;
-    text-align: center;
-    top: 30px;
-    position: relative;
-    left: 280px;
-    padding: 50px;
-    display: block;
-    width: 200px;
-    height: 800px;
-    background: rgb(182, 96, 50);
-    border-width: 40px;
-    border-color: gray;
-    border-width: 60px;
-    border-radius: 25px;
-    background-position: left top;
-    background-repeat: repeat;
-    padding: 20px;
-}
-​
+
 #cardsDiv {
     text-align: right;
     background: #7adc84;
     color: rgb(255, 255, 255);
     font-size: 30px;
 }
-​
+
 #bouncyFruit {
     display: block;
     position: relative;
@@ -113,4 +104,45 @@
     background-position: left top;
     background-repeat: repeat;
 }
-​
+
+#changePassword {
+    float: left;
+    text-align: center;
+    top: 30px;
+    position: relative;
+    left: 280px;
+    padding: 50px;
+    display: block;
+    width: 200px;
+    height: 100px;
+    background: rgb(182, 96, 50);
+    border-width: 40px;
+    border-color: gray;
+    border-width: 60px;
+    border-radius: 25px;
+    background-position: left top;
+    background-repeat: repeat;
+    padding: 20px;
+}
+
+.headerBtn1 {
+    background-color: #4CAF50;
+}
+
+#asidePtag {
+    text-align: center;
+    font-family: fantasy;
+    font-size: 165px;
+    color: rgb(255, 255, 255);
+    text-shadow: -1px -1px 0 #0b532d, 2px -1px 0 #777777, -10px 10px 0 #99d587, 1px 1px 0 #0de7d8;
+}
+
+#rightAside {
+    padding: 50px;
+    display: block;
+    width: 1000px;
+    height: 1000px;
+    background: rgb(235, 19, 19);
+}
+
+
