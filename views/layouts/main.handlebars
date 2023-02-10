@@ -11,31 +11,7 @@
     {{! <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script> }}
   </head>
 
-  <header id="header">
-    <div id="headerDiv">
-      <button class="headerBtn1">Profile</button>
-      <button class="headerBtn2">My Recipies</button>
-
-    </div>
-  </header>
-  <body id="bodyDiv">
-    <div id="asideDiv">
-      <aside id="aside">
-        <p id="asidePtag" class="animate-character">Create a recipie based on
-          restrictions.</p>
-      </aside>
-    </div>
-
     <aside id="rightAside">
-      {{#if logged_in}}
-        <a href="/preferences">Preferences</a>
-        |
-        <button class="no-button" id="logout">Logout</button>
-
-      {{else}}
-        <a class="LoginSignupCard" href="/login">Login/<span id="signupCard">
-            Sign Up</span></a>
-      {{/if}}
 
       <card id="generateCard">
         <p>generate</p>

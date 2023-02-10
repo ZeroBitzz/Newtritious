@@ -1,1 +1,24 @@
-<p>Just trying this out</p>>
+
+  <header id="header">
+    <div id="headerDiv">
+      <button class="headerBtn1">Profile</button>
+      <button class="headerBtn2">My Recipies</button>
+
+    </div>
+  </header>
+  <body id="bodyDiv">
+    <div id="asideDiv">
+      <aside id="aside">
+        <p id="asidePtag" class="animate-character">Create a recipe based on
+          restrictions.</p>
+      </aside>
+            {{#if logged_in}}
+        <a href="/preferences">Preferences</a>
+        |
+        <button class="no-button" id="logout">Logout</button>
+
+      {{else}}
+        <a class="LoginSignupCard" href="/login">Login/<span id="signupCard">
+            Sign Up</span></a>
+      {{/if}}
+    </div>
