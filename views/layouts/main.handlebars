@@ -1,48 +1,46 @@
-<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/assests/styles/mainStyles.css">
+    <link rel="stylesheet" href="/assests/styles/mainStyles.css" />
 
     <title>Newtrician</title>
-    {{!-- <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script> --}}
+    {{! <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script> }}
   </head>
 
   <header id="header">
     <div id="headerDiv">
-        <button class="headerBtn1">Profile</button>
-        <button class="headerBtn2">My Recipies</button>
+      <button class="headerBtn1">Profile</button>
+      <button class="headerBtn2">My Recipies</button>
 
     </div>
   </header>
   <body id="bodyDiv">
     <div id="asideDiv">
-    <aside id="aside">
-        <p id="asidePtag" class="animate-character">Create a recipie based on restrictions.</p>
-    </aside>
-    </div>  
-    
+      <aside id="aside">
+        <p id="asidePtag" class="animate-character">Create a recipie based on
+          restrictions.</p>
+      </aside>
+    </div>
+
     <aside id="rightAside">
-        <card class="LoginSignupCard">
-            <p>login/signup</p>
-        </card>
-        <card id="Login card">
-            <p>login</p>
-        </card>
-        <card id="SignupCard">
-            <p>signup</p>
-        </card>
-        <card id = preferencesCard>
-            <p>preferences</p>
-        </card>
-        <card id = generateCard>
-            <p>generate</p>
-        </card>
+      {{#if logged_in}}
+        <a href="/preferences">Preferences</a>
+        |
+        <button class="no-button" id="logout">Logout</button>
+
+      {{else}}
+        <a class="LoginSignupCard" href="/login">Login/<span id="signupCard">
+            Sign Up</span></a>
+      {{/if}}
+
+      <card id="generateCard">
+        <p>generate</p>
+      </card>
     </aside>
-    {{{ body }}}
+    {{{body}}}
   </body>
 </html>
