@@ -1,4 +1,4 @@
-const sequelize = require("../config/connection");
+const sequelize = require("config/connection");
 const {
   User,
   Calories,
@@ -17,7 +17,7 @@ const allergyData = require("./allergyData.json");
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  const users = await User.bulkCreate(userData, {
+  const users = await Allergies.bulkCreate(allergyData, {
     individualHooks: true,
     returning: true,
   });
