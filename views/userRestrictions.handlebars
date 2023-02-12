@@ -1,9 +1,11 @@
 <div>
   <label for="allergies">
-    Do you have any allergies?
-    <select name="allergies" id="allergies">
-      {{#each allergy as |allergy|}}
-      <option value="{{defaultValue}}"></option>
+    Do you have any of these allergies?
+    <select name="allergies" id="allergies" multiple>
+      {{#each allergy}}
+        <option value="{{allergy}}">
+
+        </option>
       {{/each}}
       <option value="no">No</option>
     </select>
@@ -11,12 +13,22 @@
 </div>
 <div>
   <label for="diet">
-    Are you on a specific diet?
-    <select name="diet" id="diet">
-      {{#each diet as|diet|}}
-      <option value="{{defaultValue}}"></option>
+    Are you on any of these diets?
+    <select name="diet" id="diet" multiple>
+      {{#each diet}}
+        <option value="{{diet}}"></option>
       {{/each}}
       <option value="no">No</option>
+    </select>
+  </label>
+</div>
+<div>
+  <label for="cuisine">
+    What are your favorite types of cuisine?
+    <select name="cuisine" id="cuisine" multiple>
+      {{#each cuisine}}
+        <option value="{{cuisine}}"></option>
+      {{/each}}
     </select>
   </label>
 </div>
