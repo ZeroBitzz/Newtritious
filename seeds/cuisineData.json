@@ -1,81 +1,31 @@
-[ 
-    {
-        "cuisine": "african"
-    },
-    {
-        "cuisine":"american"
-    },
-    {
-        "cuisine":"british"
-    },
-    {
-        "cuisine":"cajun"
-    },
-    {
-        "cuisine":"caribbean"
-    },
-    {
-        "cuisine":"chinese"
-    },
-    {
-        "cuisine":"easternEuropean"
-    },
-    {
-        "cuisine":"european"
-    },
-    {
-        "cuisine":"french"
-    },
-    {
-        "cuisine":"german"
-    },
-    {
-        "cuisine":"greek"
-    },
-    {
-        "cuisine":"irish"
-    },
-    {
-        "cuisine":"indian"
-    },
-    {
-        "cuisine":"italian"
-    },
-    {
-        "cuisine":"japanese"
-    },
-    {
-        "cuisine":"jewish"
-    },
-    {
-        "cuisine":"korean"
-    },
-    {
-        "cuisine":"latinAmerican"
-    },
-    {
-        "cuisine":"mediterranean"
-    },
-    {
-        "cuisine":"mexican"
-    },
-    {
-        "cuisine":"middleEastern"
-    },
-    {
-        "cuisine":"nordic"
-    },
-    {
-        "cuisine":"southern"
-    },
-    {
-        "cuisine":"spanish"
-    },
-    {
-        "cuisine":"thai"
-    },
-    {
-        "cuisine":"vietnamese"
-    }
+[
+  {
+    "user_id": 1,
+    "african": true,
+    "american": false,
+    "british": false,
+    "cajun": false,
+    "caribbean": false,
+    "chinese": false,
+    "easternEuropean": false,
+    "european": false,
+    "french": false,
+    "german": true,
+    "greek": false,
+    "irish": false,
+    "indian": false,
+    "italian": false,
+    "japanese": false,
+    "jewish": false,
+    "korean": false,
+    "latinAmerican": false,
+    "mediterranean": false,
+    "mexican": false,
+    "middleEastern": false,
+    "nordic": false,
+    "southern": false,
+    "spanish": false,
+    "thai": false,
+    "vietnamese": false
+  }
 ]
-

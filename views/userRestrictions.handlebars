@@ -1,34 +1,44 @@
-<div>
+<form>
   <label for="allergies">
     Do you have any of these allergies?
-    <select name="allergies" id="allergies" multiple>
-      {{#each allergy}}
-        <option value="{{allergy}}">
+    <br/>
+    {{#each allergies as |allergy|}}
+      <label>
+        <input
+          type="checkbox"
+          name="{{allergy}}"
+          value="{{allergy}}"
+        />{{allergy}}</label><br />
+    {{/each}}
 
-        </option>
-      {{/each}}
-      <option value="no">No</option>
-    </select>
   </label>
-</div>
-<div>
+</form>
+<form>
   <label for="diet">
     Are you on any of these diets?
-    <select name="diet" id="diet" multiple>
-      {{#each diet}}
-        <option value="{{diet}}"></option>
-      {{/each}}
-      <option value="no">No</option>
+    <br/>
+    {{#each diets as |diet|}}
+      <label>
+        <input
+          type="checkbox"
+          name="{{diet}}"
+          value="{{diet}}"
+        />{{diet}}</label><br />
+    {{/each}}
     </select>
   </label>
-</div>
-<div>
+</form>
+<form>
   <label for="cuisine">
     What are your favorite types of cuisine?
-    <select name="cuisine" id="cuisine" multiple>
-      {{#each cuisine}}
-        <option value="{{cuisine}}"></option>
-      {{/each}}
-    </select>
+    <br/>
+    {{#each cuisine as |cuisine|}}
+      <label>
+        <input
+          type="checkbox"
+          name="{{cuisine}}"
+          value="{{cuisine}}"
+        />{{cuisine}}</label><br />
+    {{/each}}
   </label>
-</div>
+</form>

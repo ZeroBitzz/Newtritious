@@ -1,17 +1,10 @@
 [
-    {
-    "peanuts":"true"
-},
-    {
-    "treeNuts":"false"
-},
-    {
-    "lactose":"true"
-},
-    {
-    "gluten":"true"
-},
-    {
-    "shellfish":"false"
-}
+  {
+    "user_id": 1,
+    "peanuts": true,
+    "treeNuts": false,
+    "lactose": true,
+    "gluten": true,
+    "shellfish": false
+  }
 ]

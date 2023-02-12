@@ -30,10 +30,12 @@ User.init(
     hasAllergies: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
+      defaultValue: false,
     },
     onDiet: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
+      defaultValue: false,
     },
     cuisines: {
       type: DataTypes.BOOLEAN,
