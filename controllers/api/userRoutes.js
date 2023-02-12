@@ -5,6 +5,8 @@ router.get("/", async (req, res) => {
   console.log("just checking");
 });
 
+
+//to create a new user
 router.post("/", async (req, res) => {
   try {
     const userData = await User.create(req.body);
@@ -21,6 +23,7 @@ router.post("/", async (req, res) => {
   }
 });
 
+//to login
 router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({

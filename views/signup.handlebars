@@ -3,7 +3,7 @@
 
     <form class="form signup-form">
       <div class="form-group">
-        <label for="username-signup">username:</label>
+        <label for="username-signup">Username:</label>
         <input
           class="form-input username-signup"
           type="text"
@@ -11,9 +11,26 @@
         />
       </div>
       <div class="form-group">
-        <label for="password-signup">password:</label>
+        <label for="password-signup">Password:</label>
         <input class="form-input" type="password" id="password-signup" />
       </div>
+      <div class="form-group">
+        <label for="allergies-signup">Do you have any allergies?</label>
+          <select id="allergy-signup">
+            <option value="none" selected disabled hidden>Select an Option</option>
+            <option value ="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="diet-signup" >Are you on a diet?</label>
+          <select id="diet-signup">
+            <option value="none" selected disabled hidden>Select an Option</option>
+            <option value ="true">Yes</option>
+            <option value="false">No</option>
+          </select>
+      </div>
+      
       <div class="form-group">
         <button class="btn btn-primary" type="submit">signup</button>
       </div>
