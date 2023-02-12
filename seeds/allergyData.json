@@ -1,17 +1,17 @@
 [
     {
-    "allergy":"peanuts"
+    "peanuts":"true"
 },
     {
-    "allergy":"treeNuts"
+    "treeNuts":"false"
 },
     {
-    "allergy":"lactose"
+    "lactose":"true"
 },
     {
-    "allergy":"gluten"
+    "gluten":"true"
 },
     {
-    "allergy":"shellfish"
+    "shellfish":"false"
 }
 ]

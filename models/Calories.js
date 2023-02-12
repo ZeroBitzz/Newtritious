@@ -37,7 +37,7 @@ Calories.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "diet",
+    modelName: "calories",
   }
 );
 

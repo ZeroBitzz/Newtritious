@@ -14,11 +14,23 @@
         <label for="password-signup">password:</label>
         <input class="form-input" type="password" id="password-signup" />
       </div>
-<div>
+
+
+
+
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">signup</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="./js/login.js"></script>
+{{!-- <div>
   <label for="allergies">
-    Do you have any allergies?
+    Do you have any of these allergies?
     <select name="allergies" id="allergies" multiple > 
-      {{#each allergies as |allergy|}}
+      {{#each allergy}}
       <option value="{{allergy}}">
         
       </option> 
@@ -29,7 +41,7 @@
 </div>
 <div>
   <label for="diet">
-    Are you on a specific diet?
+    Are you on any of these diets?
     <select name="diet" id="diet" multiple>
       {{#each diet}}
       <option value="{{diet}}"></option>
@@ -47,16 +59,4 @@
       {{/each}}
     </select>
   </label>
-</div>
-
-
-
-
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<script src="./js/login.js"></script>
+</div> --}}
