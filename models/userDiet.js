@@ -1,14 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
-const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");
 
-class User extends Model {
-  checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
-  }
-}
+class userDiet extends Model {}
 
-User.init(
+userDiet.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -16,44 +11,45 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    username: {
-      type: DataTypes.STRING,
+    paleo: {
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
-    password: {
-      type: DataTypes.STRING,
+    vegan: {
+      type: DataTypes.BOOLEAN,
       allowNull: false,
-      validate: {
-        len: [8],
+    },
+    vegetarian: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    },
+    keto: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    },
+    calorieRestriction: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    },
+    glutenFree: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      reference: {
+        model: "user",
+        key: "id",
       },
-    },
-    hasAllergies: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-    },
-    onDiet: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-    },
-    cuisines: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: true,
     },
   },
   {
-    hooks: {
-      beforeCreate: async (newUserData) => {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        return newUserData;
-      },
-    },
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "user",
+    modelName: "diet",
   }
 );
 
-module.exports = User;
+module.exports = userDiet;
