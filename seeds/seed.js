@@ -3,6 +3,7 @@ const {
   User,
   Calories,
   Cuisine,
+  userCuisine,
   Diet,
   UserAllergies,
   Allergies,
@@ -17,7 +18,7 @@ const cuisineData = require("./cuisineData.json");
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
-  const allergies = await Allergies.bulkCreate(allergyData, {
+  const allergies = await UserAllergies.bulkCreate(allergyData, {
     individualHooks: true,
     returning: true,
   });
@@ -25,7 +26,7 @@ const seedDatabase = async () => {
     individualHooks: true,
     returning: true,
   });
-  const cuisine = await Cuisine.bulkCreate(cuisineData, {
+  const cuisine = await userCuisine.bulkCreate(cuisineData, {
     individualHooks: true,
     returning: true,
   });
@@ -37,7 +38,7 @@ const seedDatabase = async () => {
   //   });
   // }
   for (const allergy of allergyData) {
-    await Allergies.create({
+    await UserAllergies.create({
       ...allergy,
     });
   }
@@ -47,7 +48,7 @@ const seedDatabase = async () => {
     });
   }
   for (const cuisine of cuisineData) {
-    await Cuisine.create({
+    await userCuisine.create({
       ...cuisine,
     });
   }
