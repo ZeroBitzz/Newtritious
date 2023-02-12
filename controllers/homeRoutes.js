@@ -49,6 +49,47 @@ router.get("/myrecipes", withAuth, async (req, res) => {
   }
 });
 
+router.get("/userRestrictions", (req, res) => {
+  const allergies = ["peanuts", "treeNuts", "lactose", "gluten", "shellfish"];
+  const diets = [
+    "keto",
+    "paleo",
+    "vegan",
+    "vegetarian",
+    "calorieRestriction",
+    "glutenFree",
+  ];
+  const cuisine = [
+    "african",
+    "american",
+    "british",
+    "cajun",
+    "caribbean",
+    "chinese",
+    "easternEuropean",
+    "european",
+    "french",
+    "german",
+    "greek",
+    "irish",
+    "indian",
+    "italian",
+    "japanese",
+    "jewish",
+    "korean",
+    "latinAmerican",
+    "mediterranean",
+    "mexican",
+    "middleEastern",
+    "nordic",
+    "southern",
+    "spanish",
+    "thai",
+    "vietnamese",
+  ];
+  res.render("userRestrictions", { allergies, diets, cuisine });
+});
+
 router.get("/preferences", (req, res) => {
   res.render("preferences");
 });

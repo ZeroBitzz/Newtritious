@@ -5,7 +5,6 @@ router.get("/", async (req, res) => {
   console.log("just checking");
 });
 
-
 //to create a new user
 router.post("/", async (req, res) => {
   try {
@@ -17,7 +16,6 @@ router.post("/", async (req, res) => {
 
       res.status(200).json(userData);
     });
-    res.render("../views/userRestrictions");
   } catch (err) {
     res.status(400).json(err);
   }

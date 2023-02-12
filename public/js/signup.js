@@ -7,14 +7,14 @@ const signupFormHandler = async (event) => {
   const diet = document.getElementById("diet-signup").value;
   console.log(username, password, allergies, diet);
   if (username && password && allergies && diet) {
-    const response = await fetch("controllers/api/userRoutes.js", {
+    const response = await fetch("/api/users", {
       method: "POST",
       body: JSON.stringify({ username, password, allergies, diet }),
       headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
-      document.location.replace("/myrecipes");
+      document.location.replace("userRestrictions");
     } else {
       alert(response.statusText);
     }
