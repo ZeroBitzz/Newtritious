@@ -1,6 +1,8 @@
 const router = require("express").Router();
 // const { Post, User } = require("../models");
 const withAuth = require("../utils/auth");
+const {getRecipe} = require('./api/spoonacular');
+
 
 router.get("/", async (req, res) => {
   try {
@@ -28,6 +30,13 @@ router.get("/signup", (req, res) => {
   }
 
   res.render("signup");
+});
+
+router.get("/getRecipe", async (req, res) => {
+  const {cuisine, allergies, calories, diet} = req.query;
+  console.log({cuisine, allergies, calories, diet})
+  const recipe = await getRecipe()
+  res.send(recipe)
 });
 
 router.get("/myrecipes", withAuth, async (req, res) => {
