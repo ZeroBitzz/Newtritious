@@ -1,8 +1,9 @@
 const userRestrictions = async (event) => {
   event.preventDefault();
-  const allergies = document.getElementById("#allergies-signup").value.trim();
-  const diets = document.getElementById("#diets-signup").value.trim();
-  const cuisine = document.getElementById("#cuisine-signup").value.trim();
+
+  const allergies = document.querySelectorAll("allergies-signup".checked);
+  const diets = document.getElementById("diets-signup").value;
+  const cuisine = document.getElementById("cuisine-signup").value;
   console.log(allergies, diets, cuisine);
   if (allergies && diets && cuisine) {
     const response = await fetch("/api/users/:id", {
@@ -19,6 +20,9 @@ const userRestrictions = async (event) => {
   }
 };
 
-const testing = document.getElementById("restrictions");
-console.log(testing);
-testing.addEventListener("submit", userRestrictions);
+// const testing = document.getElementById("restrictions");
+// testing.addEventListener("submit", userRestrictions);
+
+document
+  .getElementById("restrictions")
+  .addEventListener("submit", userRestrictions);

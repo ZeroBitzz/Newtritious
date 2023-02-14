@@ -1,11 +1,11 @@
 <div id="restrictions">
 <form id="restrictions">
-  <label for="allergies" id="allergies-signup">
+  <label for="allergies" >
     Do you have any of these allergies?
     <br/>
     {{#each allergies as |allergy|}}
       <label>
-        <input
+        <input class="allergies-signup" id="allergies-signup"
           type="checkbox"
           name="{{allergy}}"
           value="{{allergy}}"
@@ -14,12 +14,12 @@
 
   </label>
 
-  <label for="diet" id= "diets-signup">
+  <label for="diet">
     Are you on any of these diets?
     <br/>
     {{#each diets as |diet|}}
       <label>
-        <input
+        <input  class= "diets-signup" id="diets-signup"
           type="checkbox"
           name="{{diet}}"
           value="{{diet}}"
@@ -28,12 +28,12 @@
     </select>
   </label>
 
-  <label for="cuisine" id="cuisine-signup">
+  <label for="cuisine">
     What are your favorite types of cuisine?
     <br/>
     {{#each cuisine as |cuisine|}}
       <label>
-        <input
+        <input  class="cuisine-signup" id="cuisine-signup"
           type="checkbox"
           name="{{cuisine}}"
           value="{{cuisine}}"
