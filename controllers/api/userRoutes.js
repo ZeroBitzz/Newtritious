@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, UserAllergies, UserCuisine, UserDiet } = require("../../models");
 
 router.get("/", async (req, res) => {
   console.log("just checking");
@@ -18,6 +18,42 @@ router.post("/", async (req, res) => {
     });
   } catch (err) {
     res.status(400).json(err);
+  }
+});
+
+//to create a new user's allergies
+router.post("/:id", async (req, res) => {
+  try {
+    const allergyData = await UserAllergies.create(req.body.allergyData);
+    const dietData = await UserDiet.create(req.body.dietData);
+    const cuisineData = await UserCuisine.create(req.body.cuisineData);
+
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+
+
+// GET a single user
+router.get("/:id", async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.params.id, {
+      // JOIN with UserAllergies, UserDiet, UserCuisine
+      include: [{ model: UserAllergies, as: "users_allergies" }],
+      include: [{ model: UserDiet, as: "users_diet" }],
+      include: [{ model: UserCuisine, as: "users_cuisine" }],
+    });
+
+    if (!userData) {
+      res.status(404).json({ message: "No user found with this id!" });
+      return;
+    }
+
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 

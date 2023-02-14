@@ -1,7 +1,7 @@
 const User = require("./User");
 const UserAllergies = require("./UserAllergies");
-const userCuisine = require("./UserCuisine");
-const userDiet = require("./UserDiet");
+const UserCuisine = require("./UserCuisine");
+const UserDiet = require("./UserDiet");
 const Calories = require("./Calories");
 
 User.hasOne(UserAllergies, {
@@ -22,19 +22,19 @@ UserAllergies.belongsTo(User, {
 //   },
 // });
 
-User.hasOne(userCuisine, {
+User.hasOne(UserCuisine, {
   foreignKey: "user_id",
   onDelete: "CASCADE",
 });
-userCuisine.belongsTo(User, {
+UserCuisine.belongsTo(User, {
   foreignKey: "user_id",
 });
 
-User.hasOne(userDiet, {
+User.hasOne(UserDiet, {
   foreignKey: "user_id",
   onDelete: "CASCADE",
 });
-userDiet.belongsToMany(User, {
+UserDiet.belongsToMany(User, {
   through: {
     model: User,
   },
@@ -44,6 +44,6 @@ module.exports = {
   User,
   UserAllergies,
   Calories,
-  userCuisine,
-  userDiet,
+  UserCuisine,
+  UserDiet,
 };
