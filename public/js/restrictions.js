@@ -1,7 +1,14 @@
 const userRestrictions = async (event) => {
   event.preventDefault();
 
-  const allergies = document.querySelectorAll("allergies-signup".checked);
+  const allergies = document
+    .querySelector("allergies-signup")
+    .addEventListener("click", function () {
+      let checked = document.querySelectorAll("input[type='checkbox']:checked");
+      checked.forEach(function (cb) {
+        console.log(cb.value);
+      });
+    });
   const diets = document.getElementById("diets-signup").value;
   const cuisine = document.getElementById("cuisine-signup").value;
   console.log(allergies, diets, cuisine);
