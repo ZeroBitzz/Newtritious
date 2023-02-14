@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-exports.getRecipe = async function (diet, cuisine, allergies, calories) {
+exports.getRecipe = async function (cuisine, diet, tolerances, maxCalories) {
     console.log('spoonacular')
     const apiKey = process.env.API_KEY;
     const baseUrl = "https://api.spoonacular.com/recipes/complexSearch";
@@ -8,8 +8,8 @@ exports.getRecipe = async function (diet, cuisine, allergies, calories) {
       apiKey: apiKey,
       diet: diet,
       cuisine: cuisine,
-      allergies: allergies,
-      calories: calories,
+      tolerances: tolerances,
+      calories: maxCalories,
     };
     console.log(apiKey)
 
