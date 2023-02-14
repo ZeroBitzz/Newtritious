@@ -1,5 +1,6 @@
-<form>
-  <label for="allergies">
+<div id="restrictions">
+<form id="restrictions">
+  <label for="allergies" id="allergies-signup">
     Do you have any of these allergies?
     <br/>
     {{#each allergies as |allergy|}}
@@ -12,9 +13,8 @@
     {{/each}}
 
   </label>
-</form>
-<form>
-  <label for="diet">
+
+  <label for="diet" id= "diets-signup">
     Are you on any of these diets?
     <br/>
     {{#each diets as |diet|}}
@@ -27,9 +27,8 @@
     {{/each}}
     </select>
   </label>
-</form>
-<form>
-  <label for="cuisine">
+
+  <label for="cuisine" id="cuisine-signup">
     What are your favorite types of cuisine?
     <br/>
     {{#each cuisine as |cuisine|}}
@@ -41,4 +40,10 @@
         />{{cuisine}}</label><br />
     {{/each}}
   </label>
+        <div class="form-group">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </div>
 </form>
+</div>
+
+<script src="./js/restrictions.js"></script>

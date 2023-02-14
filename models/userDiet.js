@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class userDiet extends Model {}
+class UserDiet extends Model {}
 
-userDiet.init(
+UserDiet.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -52,4 +52,4 @@ userDiet.init(
   }
 );
 
-module.exports = userDiet;
+module.exports = UserDiet;

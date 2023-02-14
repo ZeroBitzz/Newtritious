@@ -32,12 +32,12 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-router.get("/getRecipe", async (req, res) => {
-  const {cuisine, allergies, calories, diet} = req.query;
-  console.log({cuisine, allergies, calories, diet})
-  const recipe = await getRecipe()
-  res.send(recipe)
-});
+// router.get("/getRecipe", async (req, res) => {
+//   const {cuisine, allergies, calories, diet} = req.query;
+//   console.log({cuisine, allergies, calories, diet})
+//   const recipe = await getRecipe()
+//   res.send(recipe)
+// });
 
 router.get("/myrecipes", withAuth, async (req, res) => {
   try {
