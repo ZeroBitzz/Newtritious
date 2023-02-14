@@ -1,3 +1,4 @@
+
 require('dotenv').config()
 
 exports.getRecipe = async function (cuisine, diet, tolerances, maxCalories) {
@@ -20,3 +21,4 @@ exports.getRecipe = async function (cuisine, diet, tolerances, maxCalories) {
 //   `/getRecipe?${examplequery}&`
     return data;
 }
+
