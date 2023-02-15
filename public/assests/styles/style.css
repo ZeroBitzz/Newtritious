@@ -4,8 +4,16 @@ body {
     display: block;
     width: 1000px;
     height: 1000px;
-    background-image: url(../images&icons/Plantz.jpg)
+    background-image: url(../img/Plantz.jpg)
     
+}
+
+a {
+    color: black;
+}
+
+button {
+    background-color: cyan;
 }
 
 #header {
@@ -18,7 +26,6 @@ body {
     background-position: left top;
     background-repeat: repeat;
     padding: 20px;
-    min-width:;
     position: relative;
     bottom: 30px;
     
@@ -74,7 +81,7 @@ body {
     left: 100px;
     width: 800px;
     height: 800px;
-    background-image: url(../images&icons/bouncyfruit.gif);
+    background-image: url(../img/bouncyfruit.gif);
     border-radius: 25px;
     background-position: left top;
     background-repeat: repeat;
