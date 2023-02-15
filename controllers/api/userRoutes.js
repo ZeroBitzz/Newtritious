@@ -34,8 +34,6 @@ router.post("/:id", async (req, res) => {
   }
 });
 
-
-
 // GET a single user
 router.get("/:id", async (req, res) => {
   try {
@@ -59,6 +57,7 @@ router.get("/:id", async (req, res) => {
 
 //to login
 router.post("/login", async (req, res) => {
+  console.log("why!?!?!");
   try {
     const userData = await User.findOne({
       where: { username: req.body.username },
