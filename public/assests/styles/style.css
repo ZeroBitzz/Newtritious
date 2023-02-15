@@ -8,6 +8,14 @@ body {
     
 }
 
+a {
+    color: black;
+}
+
+button {
+    background-color: cyan;
+}
+
 #header {
     padding: 60px;
     text-align: right;
@@ -18,7 +26,6 @@ body {
     background-position: left top;
     background-repeat: repeat;
     padding: 20px;
-    min-width:;
     position: relative;
     bottom: 30px;
     
