@@ -2,10 +2,10 @@
 
 const userRestrictions = async (event) => {
   if (allergies && diet && cuisine) {
-    console.log(allergies);
+    console.log(cuisine);
     const response = await fetch(`/api/users/restrictions`, {
       method: "POST",
-      body: JSON.stringify({ allergies, diet, cuisine }),
+      body: JSON.stringify({ allergies }),
       headers: { "Content-Type": "application/json" },
     });
 
@@ -17,11 +17,12 @@ const userRestrictions = async (event) => {
   }
 };
 
+
 const checkboxes = document.querySelectorAll("input[type=checkbox]");
 const form = document.getElementById("restrictions");
 const allergies = [{ user_id: "2" }];
-const diet = [];
-const cuisine = [];
+const diet = [{ user_id: "2" }];
+const cuisine = [{ user_id: "2" }];
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();

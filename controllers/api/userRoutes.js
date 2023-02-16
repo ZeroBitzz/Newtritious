@@ -22,13 +22,12 @@ router.post("/", async (req, res) => {
   }
 });
 
-//to create a new user's restrictions
+//to create a new user's allergies
 router.post("/restrictions", async (req, res) => {
-  console.log("testing");
   try {
     const userId = 2;
     console.log("++++ ============");
-    console.log(req.body.allergies[1]);
+    // console.log(req.body.cuisine[1]);
 
     const allergyData = await UserAllergies.create({
       user_id: userId,
@@ -38,22 +37,74 @@ router.post("/restrictions", async (req, res) => {
       gluten: req.body.allergies[4].gluten,
       shellfish: req.body.allergies[5].shellfish,
     });
-    const dietData = await UserDiet.create({
-      user_id: userId,
-      keto: req.body.diet[1].keto,
-
-      ...req.body,
-      user_id: userId,
-    });
-    const cuisineData = await UserCuisine.create({
-      ...req.body,
-      user_id: userId,
-    });
-    res.status(200).json(allergyData, dietData, cuisineData);
+    res.status(200).json(allergyData);
   } catch (err) {
     res.status(400).json(err);
   }
 });
+//to create a new user's diets
+// router.post("/diets", async (req, res) => {
+//   console.log("diet");
+//   try {
+//     const userId = 2;
+//     console.log("++++ ============");
+//     // console.log(req.body.cuisine[1]);
+//     const dietData = await UserDiet.create({
+//       user_id: userId,
+//       paleo: req.body.diet[1].paleo,
+//       keto: req.body.diet[2].keto,
+//       vegan: req.body.diet[3].vegan,
+//       vegetarian: req.body.diet[4].vegetarian,
+//       calorieRestriction: req.body.diet[5].calorieRestriction,
+//       glutenFree: req.body.diet[6].glutenFree,
+//     });
+//     res.status(200).json(dietData);
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
+
+// //create a new user's cuisines
+// router.post("/cuisines", async (req, res) => {
+//   console.log("cuisine");
+//   try {
+//     const userId = 2;
+//     console.log("++++ ============");
+//     // console.log(req.body.cuisine[1]);
+//     const cuisineData = await UserCuisine.create({
+//       user_id: userId,
+//       african: req.body.diet[1].african,
+//       american: req.body.diet[2].american,
+//       british: req.body.diet[3].british,
+//       cajun: req.body.diet[4].cajun,
+//       caribbean: req.body.diet[5].caribbean,
+//       chinese: req.body.diet[6].chinese,
+//       easternEuropean: req.body.diet[7].easternEuropean,
+//       european: req.body.diet[8].european,
+//       french: req.body.diet[9].french,
+//       german: req.body.diet[10].german,
+//       greek: req.body.diet[11].greek,
+//       irish: req.body.diet[12].irish,
+//       indian: req.body.diet[13].indian,
+//       italian: req.body.diet[14].italian,
+//       japanese: req.body.diet[15].japanese,
+//       jewish: req.body.diet[16].jewish,
+//       korean: req.body.diet[17].korean,
+//       latinAmerican: req.body.diet[18].latinAmerican,
+//       mediterranean: req.body.diet[19].mediterranean,
+//       mexican: req.body.diet[20].mexican,
+//       middleEastern: req.body.diet[21].middleEastern,
+//       nordic: req.body.diet[22].nordic,
+//       southern: req.body.diet[23].southern,
+//       spanish: req.body.diet[24].spanish,
+//       thai: req.body.diet[25].thai,
+//       vietnamese: req.body.diet[26].vietnamese,
+//     });
+//     res.status(200).json(cuisineData);
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
 
 // GET a single user
 router.get("/:id", async (req, res) => {
