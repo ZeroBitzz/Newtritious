@@ -3,7 +3,6 @@
 const userRestrictions = async (event) => {
   //removed && diet && cuisine from 5
   if (allergies) {
-    console.log("what the hell");
     const allergyRoute = await fetch(`/api/users/allergies`, {
       method: "POST",
       body: JSON.stringify({ allergies }),
@@ -11,17 +10,25 @@ const userRestrictions = async (event) => {
     });
   }
   if (cuisine) {
-    console.log("who knows");
     const cuisineRoute = await fetch(`/api/users/cuisines`, {
       method: "POST",
       body: JSON.stringify({ cuisine }),
       headers: { "Content-Type": "application/json" },
     });
   }
+  if (diet) {
+    console.log("checking");
+    const dietRoute = await fetch(`/api/users/diets`, {
+      method: "POST",
+      body: JSON.stringify({ diet }),
+      headers: { "Content-Type": "application/json" },
+    });
+  }
 
-  if (allergies && cuisine) {
-    document.location.replace("/myrecipes");
-  } else {
+  //   if (allergies && cuisine && diet) {
+  //     document.location.replace("/myrecipes");
+  //   }
+  else {
     alert(response.statusText);
   }
 };
@@ -65,11 +72,6 @@ form.addEventListener("submit", function (e) {
         break;
     }
     switch (currentFormId) {
-      case "keto":
-        diet.push({ keto: checkbox.checked });
-        break;
-    }
-    switch (currentFormId) {
       case "paleo":
         diet.push({ paleo: checkbox.checked });
         break;
@@ -82,6 +84,11 @@ form.addEventListener("submit", function (e) {
     switch (currentFormId) {
       case "vegetarian":
         diet.push({ vegetarian: checkbox.checked });
+        break;
+    }
+    switch (currentFormId) {
+      case "keto":
+        diet.push({ keto: checkbox.checked });
         break;
     }
     switch (currentFormId) {
