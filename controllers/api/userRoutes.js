@@ -31,8 +31,6 @@ router.post("/restrictions", async (req, res) => {
     console.log(req.body.allergies[1]);
 
     const allergyData = await UserAllergies.create({
-      ...req.body.allergies[1].peanuts,
-
       user_id: userId,
       peanuts: req.body.allergies[1].peanuts,
       treeNuts: req.body.allergies[2].treeNuts,
@@ -40,15 +38,18 @@ router.post("/restrictions", async (req, res) => {
       gluten: req.body.allergies[4].gluten,
       shellfish: req.body.allergies[5].shellfish,
     });
-    // const dietData = await UserDiet.create({
-    //   ...req.body,
-    //   user_id: userId,
-    // });
-    // const cuisineData = await UserCuisine.create({
-    //   ...req.body,
-    //   user_id: userId,
-    // });
-    res.status(200).json(allergyData);
+    const dietData = await UserDiet.create({
+      user_id: userId,
+      keto: req.body.diet[1].keto,
+
+      ...req.body,
+      user_id: userId,
+    });
+    const cuisineData = await UserCuisine.create({
+      ...req.body,
+      user_id: userId,
+    });
+    res.status(200).json(allergyData, dietData, cuisineData);
   } catch (err) {
     res.status(400).json(err);
   }

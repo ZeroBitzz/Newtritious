@@ -5,7 +5,7 @@ const userRestrictions = async (event) => {
     console.log(allergies);
     const response = await fetch(`/api/users/restrictions`, {
       method: "POST",
-      body: JSON.stringify({ allergies }),
+      body: JSON.stringify({ allergies, diet, cuisine }),
       headers: { "Content-Type": "application/json" },
     });
 
@@ -58,169 +58,166 @@ form.addEventListener("submit", function (e) {
     }
     switch (currentFormId) {
       case "keto":
-        diet.push({ currentFormId: checkbox.checked });
+        diet.push({ keto: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "paleo":
-        diet.push({ currentFormId: checkbox.checked });
+        diet.push({ paleo: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "vegan":
-        diet.push({ currentFormId: checkbox.checked });
+        diet.push({ vegan: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "vegetarian":
-        diet.push({ currentFormId: checkbox.checked });
+        diet.push({ vegetarian: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "calorieRestriction":
-        diet.push({ currentFormId: checkbox.checked });
+        diet.push({ calorieRestriction: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "glutenFree":
-        diet.push({ currentFormId: checkbox.checked });
+        diet.push({ glutenFree: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "african":
-        cuisine.push({ currentFormId: checkbox.checked });
+        cuisine.push({ african: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "american":
-        cuisine.push({ currentFormId: checkbox.checked });
+        cuisine.push({ american: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "british":
-        cuisine.push({ currentFormId: checkbox.checked });
+        cuisine.push({ british: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "cajun":
-        cuisine.push({ currentFormId: checkbox.checked });
+        cuisine.push({ cajun: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "caribbean":
-        cuisine.push({ currentFormId: checkbox.checked });
+        cuisine.push({ caribbean: checkbox.checked });
         break;
     }
     switch (currentFormId) {
-      case "chines":
-        cuisine.push({ currentFormId: checkbox.checked });
+      case "chinese":
+        cuisine.push({ chinese: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "easternEuropean":
-        cuisine.push({ currentFormId: checkbox.checked });
+        cuisine.push({ easternEuropean: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "european":
-        cuisine.push({ currentFormId: checkbox.checked });
+        cuisine.push({ european: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "french":
-        cuisine.push({ currentFormId: checkbox.checked });
+        cuisine.push({ french: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "german":
-        cuisine.push({ currentFormId: checkbox.checked });
+        cuisine.push({ german: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "greek":
-        cuisine.push({ currentFormId: checkbox.checked });
+        cuisine.push({ greek: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "irish":
-        cuisine.push({ currentFormId: checkbox.checked });
+        cuisine.push({ irish: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "indian":
-        cuisine.push({ currentFormId: checkbox.checked });
+        cuisine.push({ indian: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "italian":
-        cuisine.push({ currentFormId: checkbox.checked });
+        cuisine.push({ italian: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "japanese":
-        cuisine.push({ currentFormId: checkbox.checked });
+        cuisine.push({ japanese: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "jewish":
-        cuisine.push({ currentFormId: checkbox.checked });
+        cuisine.push({ jewish: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "korean":
-        cuisine.push({ currentFormId: checkbox.checked });
+        cuisine.push({ korean: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "latinAmerican":
-        cuisine.push({ currentFormId: checkbox.checked });
+        cuisine.push({ latinAmerican: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "mediterranean":
-        cuisine.push({ currentFormId: checkbox.checked });
+        cuisine.push({ mediterranean: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "mexican":
-        cuisine.push({ currentFormId: checkbox.checked });
+        cuisine.push({ mexican: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "middleEastern":
-        cuisine.push({ currentFormId: checkbox.checked });
+        cuisine.push({ middleEastern: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "nordic":
-        cuisine.push({ currentFormId: checkbox.checked });
+        cuisine.push({ nordic: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "southern":
-        cuisine.push({ currentFormId: checkbox.checked });
+        cuisine.push({ southern: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "spanish":
-        cuisine.push({ currentFormId: checkbox.checked });
+        cuisine.push({ spanish: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "thai":
-        cuisine.push({ currentFormId: checkbox.checked });
+        cuisine.push({ thai: checkbox.checked });
         break;
     }
     switch (currentFormId) {
       case "vietnamese":
-        cuisine.push({ currentFormId: checkbox.checked });
+        cuisine.push({ vietnamese: checkbox.checked });
         break;
     }
     // }
   });
-  console.log(allergies);
-  console.log(diet);
-  console.log(cuisine);
 
   userRestrictions();
 });
