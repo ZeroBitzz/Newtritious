@@ -21,6 +21,7 @@ UserCuisine.init(
       allowNull: false,
       defaultValue: false,
     },
+    
     british: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
