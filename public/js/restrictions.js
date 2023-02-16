@@ -16,19 +16,18 @@ const userRestrictions = async (event) => {
       headers: { "Content-Type": "application/json" },
     });
   }
-  if (diet) {
-    console.log("checking");
-    const dietRoute = await fetch(`/api/users/diets`, {
-      method: "POST",
-      body: JSON.stringify({ diet }),
-      headers: { "Content-Type": "application/json" },
-    });
-  }
-
-  //   if (allergies && cuisine && diet) {
-  //     document.location.replace("/myrecipes");
+  //   if (diet) {
+  //     console.log("checking");
+  //     const dietRoute = await fetch(`/api/users/diets`, {
+  //       method: "POST",
+  //       body: JSON.stringify({ diet }),
+  //       headers: { "Content-Type": "application/json" },
+  //     });
   //   }
-  else {
+
+  if (allergies && cuisine && diet) {
+    document.location.replace("/myrecipes");
+  } else {
     alert(response.statusText);
   }
 };

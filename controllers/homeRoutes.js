@@ -1,8 +1,7 @@
 const router = require("express").Router();
-// const { Post, User } = require("../models");
+const { User } = require("../models");
 const withAuth = require("../utils/auth");
-const {getRecipe} = require('./api/spoonacular');
-
+const { getRecipe } = require("./api/spoonacular");
 
 router.get("/", async (req, res) => {
   try {
@@ -15,17 +14,51 @@ router.get("/", async (req, res) => {
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect("/profile");
+    res.redirect("/myrecipes");
     return;
+  } else {
+    res.render("login");
   }
+});
 
-  res.render("login");
+//to login
+router.post("/login", async (req, res) => {
+  try {
+    const userData = await User.findOne({
+      where: { username: req.body.username },
+    });
+    if (!userData) {
+      res
+        .status(400)
+        .json({ message: "Incorrect username or password, please try again" });
+      return;
+    }
+
+    const validPassword = await userData.checkPassword(req.body.password);
+
+    if (!validPassword) {
+      res
+        .status(400)
+        .json({ message: "Incorrect username or password, please try again" });
+      return;
+    }
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+      console.log(userData.username);
+
+      // res.json({ user: userData, message: "You are now logged in!" });
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
 
 router.get("/signup", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect("/profile").json({ message: "You are already logged in. " });
+    res.redirect("/myrecipes").json({ message: "You are already logged in. " });
     return;
   }
 
@@ -33,9 +66,9 @@ router.get("/signup", (req, res) => {
 });
 
 router.get("/getRecipe", async (req, res) => {
-  const {cuisine, tolerances, maxCalories, diet} = req.query;
-  const recipe = await getRecipe(cuisine, tolerances, maxCalories, diet)
-  res.send(recipe)
+  const { cuisine, tolerances, maxCalories, diet } = req.query;
+  const recipe = await getRecipe(cuisine, tolerances, maxCalories, diet);
+  res.send(recipe);
 });
 
 router.get("/myrecipes", withAuth, async (req, res) => {
@@ -60,12 +93,12 @@ router.get("/myrecipes", withAuth, async (req, res) => {
 router.get("/userRestrictions", (req, res) => {
   const allergies = ["peanuts", "treeNuts", "lactose", "gluten", "shellfish"];
   const diets = [
-    "keto",
     "paleo",
     "vegan",
     "vegetarian",
-    "calorieRestriction",
-    "glutenFree",
+    "keto",
+    "calorie_restriction",
+    "gluten_free",
   ];
   const cuisine = [
     "african",
