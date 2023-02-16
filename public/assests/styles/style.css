@@ -8,12 +8,65 @@ body {
     
 }
 
+.col-md-6 {
+    border-radius: 25px;
+    background-color: wheat;
+    background-position: left top;
+    background-repeat: repeat;
+    font-size: 50px;
+    padding: 30px;
+
+}
+
+
+#loginCard {
+    border-radius: 25px;
+    border-width: 20px;
+    background-color: whitesmoke;
+    background-position : calc(100% - 100px) 5;
+    background-position: left top;
+    background-repeat: repeat;
+    font-size: 50px;
+    padding: 30px;
+    height: 400px;
+}
+
+.LoginSignupCard {
+    position: relative;
+    bottom: 400px;
+    left: 150px;
+    font-size: 100px;
+}
+
+#signupCard {
+    position: relative;
+    bottom: 250px;
+    left: -110px;
+    font-size: 100px;
+}
+
+#restrictions {
+    border-radius: 25px;
+    background-color: wheat;
+    background-position: left top;
+    background-repeat: repeat;
+    font-size: 50px;
+    padding: 30px;
+}
+
+.btn-primary {
+    position: relative;
+    bottom: -30px;
+}
+
 a {
     color: black;
 }
 
 button {
-    background-color: cyan;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    background: none;
 }
 
 #header {
