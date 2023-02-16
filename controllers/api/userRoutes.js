@@ -36,8 +36,9 @@ router.post("/allergies", async (req, res) => {
       gluten: req.body.allergies[4].gluten,
       shellfish: req.body.allergies[5].shellfish,
     });
-    res.status(200).json(allergyData);
+    res.status(204).json(allergyData);
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 });
