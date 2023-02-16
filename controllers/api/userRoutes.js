@@ -23,7 +23,7 @@ router.post("/", async (req, res) => {
 });
 
 //to create a new user's allergies
-router.post("/restrictions", async (req, res) => {
+router.post("/allergies", async (req, res) => {
   try {
     const userId = 2;
     console.log("++++ ============");
@@ -65,46 +65,46 @@ router.post("/restrictions", async (req, res) => {
 // });
 
 // //create a new user's cuisines
-// router.post("/cuisines", async (req, res) => {
-//   console.log("cuisine");
-//   try {
-//     const userId = 2;
-//     console.log("++++ ============");
-//     // console.log(req.body.cuisine[1]);
-//     const cuisineData = await UserCuisine.create({
-//       user_id: userId,
-//       african: req.body.diet[1].african,
-//       american: req.body.diet[2].american,
-//       british: req.body.diet[3].british,
-//       cajun: req.body.diet[4].cajun,
-//       caribbean: req.body.diet[5].caribbean,
-//       chinese: req.body.diet[6].chinese,
-//       easternEuropean: req.body.diet[7].easternEuropean,
-//       european: req.body.diet[8].european,
-//       french: req.body.diet[9].french,
-//       german: req.body.diet[10].german,
-//       greek: req.body.diet[11].greek,
-//       irish: req.body.diet[12].irish,
-//       indian: req.body.diet[13].indian,
-//       italian: req.body.diet[14].italian,
-//       japanese: req.body.diet[15].japanese,
-//       jewish: req.body.diet[16].jewish,
-//       korean: req.body.diet[17].korean,
-//       latinAmerican: req.body.diet[18].latinAmerican,
-//       mediterranean: req.body.diet[19].mediterranean,
-//       mexican: req.body.diet[20].mexican,
-//       middleEastern: req.body.diet[21].middleEastern,
-//       nordic: req.body.diet[22].nordic,
-//       southern: req.body.diet[23].southern,
-//       spanish: req.body.diet[24].spanish,
-//       thai: req.body.diet[25].thai,
-//       vietnamese: req.body.diet[26].vietnamese,
-//     });
-//     res.status(200).json(cuisineData);
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
+router.post("/cuisines", async (req, res) => {
+  try {
+    const userId = 2;
+    console.log("we're not gonna make it!");
+    // console.log(req.body.cuisine[1]);
+    const cuisineData = await UserCuisine.create({
+      user_id: userId,
+      african: req.body.cuisine[1].african,
+      american: req.body.cuisine[2].american,
+      british: req.body.cuisine[3].british,
+      cajun: req.body.cuisine[4].cajun,
+      caribbean: req.body.cuisine[5].caribbean,
+      chinese: req.body.cuisine[6].chinese,
+      easternEuropean: req.body.cuisine[7].easternEuropean,
+      european: req.body.cuisine[8].european,
+      french: req.body.cuisine[9].french,
+      german: req.body.cuisine[10].german,
+      greek: req.body.cuisine[11].greek,
+      irish: req.body.cuisine[12].irish,
+      indian: req.body.cuisine[13].indian,
+      italian: req.body.cuisine[14].italian,
+      japanese: req.body.cuisine[15].japanese,
+      jewish: req.body.cuisine[16].jewish,
+      korean: req.body.cuisine[17].korean,
+      latinAmerican: req.body.cuisine[18].latinAmerican,
+      mediterranean: req.body.cuisine[19].mediterranean,
+      mexican: req.body.cuisine[20].mexican,
+      middleEastern: req.body.cuisine[21].middleEastern,
+      nordic: req.body.cuisine[22].nordic,
+      southern: req.body.cuisine[23].southern,
+      spanish: req.body.cuisine[24].spanish,
+      thai: req.body.cuisine[25].thai,
+      vietnamese: req.body.cuisine[26].vietnamese,
+    });
+    res.status(200).json(cuisineData);
+    console.log("is it working?");
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
 // GET a single user
 router.get("/:id", async (req, res) => {

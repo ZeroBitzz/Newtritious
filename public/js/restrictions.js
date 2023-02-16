@@ -1,23 +1,30 @@
 // const User = require("../../models/User");
 
 const userRestrictions = async (event) => {
-  if (allergies && diet && cuisine) {
-    console.log(cuisine);
-    const response = await fetch(`/api/users/restrictions`, {
+  //removed && diet && cuisine from 5
+  if (allergies) {
+    console.log("what the hell");
+    const allergyRoute = await fetch(`/api/users/allergies`, {
       method: "POST",
       body: JSON.stringify({ allergies }),
       headers: { "Content-Type": "application/json" },
     });
+  }
+  if (cuisine) {
+    console.log("who knows");
+    const cuisineRoute = await fetch(`/api/users/cuisines`, {
+      method: "POST",
+      body: JSON.stringify({ cuisine }),
+      headers: { "Content-Type": "application/json" },
+    });
+  }
 
-    if (response.ok) {
-      document.location.replace("/myrecipes");
-    } else {
-      alert(response.statusText);
-    }
+  if (allergies && cuisine) {
+    document.location.replace("/myrecipes");
+  } else {
+    alert(response.statusText);
   }
 };
-
-
 const checkboxes = document.querySelectorAll("input[type=checkbox]");
 const form = document.getElementById("restrictions");
 const allergies = [{ user_id: "2" }];
