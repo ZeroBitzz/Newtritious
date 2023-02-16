@@ -27,7 +27,6 @@ router.post("/allergies", async (req, res) => {
   try {
     const userId = 2;
     console.log("++++ ============");
-    // console.log(req.body.cuisine[1]);
 
     const allergyData = await UserAllergies.create({
       user_id: userId,
@@ -42,34 +41,31 @@ router.post("/allergies", async (req, res) => {
     res.status(400).json(err);
   }
 });
-//to create a new user's diets
-// router.post("/diets", async (req, res) => {
-//   console.log("diet");
-//   try {
-//     const userId = 2;
-//     console.log("++++ ============");
-//     // console.log(req.body.cuisine[1]);
-//     const dietData = await UserDiet.create({
-//       user_id: userId,
-//       paleo: req.body.diet[1].paleo,
-//       keto: req.body.diet[2].keto,
-//       vegan: req.body.diet[3].vegan,
-//       vegetarian: req.body.diet[4].vegetarian,
-//       calorieRestriction: req.body.diet[5].calorieRestriction,
-//       glutenFree: req.body.diet[6].glutenFree,
-//     });
-//     res.status(200).json(dietData);
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
+
+// to create a new user's diets
+router.post("/diets", async (req, res) => {
+  try {
+    const userId = 2;
+    console.log("======== +++++ ========");
+    const dietData = await UserDiet.create({
+      user_id: userId,
+      paleo: req.body.diet[1].paleo,
+      vegan: req.body.diet[2].vegan,
+      vegetarian: req.body.diet[3].vegetarian,
+      keto: req.body.diet[4].keto,
+      calorie_restriction: req.body.diet[5].calorie_restriction,
+      gluten_free: req.body.diet[6].gluten_free,
+    });
+    res.status(200).json(dietData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
 // //create a new user's cuisines
 router.post("/cuisines", async (req, res) => {
   try {
     const userId = 2;
-    console.log("we're not gonna make it!");
-    // console.log(req.body.cuisine[1]);
     const cuisineData = await UserCuisine.create({
       user_id: userId,
       african: req.body.cuisine[1].african,
@@ -100,7 +96,6 @@ router.post("/cuisines", async (req, res) => {
       vietnamese: req.body.cuisine[26].vietnamese,
     });
     res.status(200).json(cuisineData);
-    console.log("is it working?");
   } catch (err) {
     res.status(400).json(err);
   }

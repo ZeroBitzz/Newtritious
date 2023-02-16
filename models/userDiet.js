@@ -27,11 +27,11 @@ UserDiet.init(
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
-    calorieRestriction: {
+    calorie_restriction: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
-    glutenFree: {
+    gluten_free: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
@@ -48,7 +48,7 @@ UserDiet.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "diet",
+    modelName: "userDiet",
   }
 );
 
