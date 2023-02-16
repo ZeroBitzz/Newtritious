@@ -9,6 +9,7 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   try {
     const userData = await User.create(req.body);
+    console.log(userData.id);
 
     req.session.save(() => {
       req.session.user_id = userData.id;
@@ -21,20 +22,37 @@ router.post("/", async (req, res) => {
   }
 });
 
-//to create a new user's allergies
-router.post("/:id", async (req, res) => {
+//to create a new user's restrictions
+router.post("/restrictions", async (req, res) => {
+  console.log("testing");
   try {
-    const allergyData = await UserAllergies.create(req.body.allergyData);
-    const dietData = await UserDiet.create(req.body.dietData);
-    const cuisineData = await UserCuisine.create(req.body.cuisineData);
+    const userId = 2;
+    console.log("++++ ============");
+    console.log(req.body.allergies[1]);
 
-    res.status(200).json(userData);
+    const allergyData = await UserAllergies.create({
+      ...req.body.allergies[1].peanuts,
+
+      user_id: userId,
+      peanuts: req.body.allergies[1].peanuts,
+      treeNuts: req.body.allergies[2].treeNuts,
+      lactose: req.body.allergies[3].lactose,
+      gluten: req.body.allergies[4].gluten,
+      shellfish: req.body.allergies[5].shellfish,
+    });
+    // const dietData = await UserDiet.create({
+    //   ...req.body,
+    //   user_id: userId,
+    // });
+    // const cuisineData = await UserCuisine.create({
+    //   ...req.body,
+    //   user_id: userId,
+    // });
+    res.status(200).json(allergyData);
   } catch (err) {
     res.status(400).json(err);
   }
 });
-
-
 
 // GET a single user
 router.get("/:id", async (req, res) => {
@@ -59,6 +77,7 @@ router.get("/:id", async (req, res) => {
 
 //to login
 router.post("/login", async (req, res) => {
+  console.log("why!?!?!");
   try {
     const userData = await User.findOne({
       where: { username: req.body.username },

@@ -14,11 +14,12 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("userRestrictions");
+      document.location.replace("userRestrictions/");
     } else {
       alert(response.statusText);
     }
   }
+  console.log();
 };
 
 document
