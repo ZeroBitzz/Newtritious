@@ -3,7 +3,7 @@ const { User } = require("../models");
 const withAuth = require("../utils/auth");
 const { getRecipe } = require("./api/spoonacular");
 
-router.get("/", async (req, res) => {
+router.get("/nothing", async (req, res) => {
   try {
     res.render("homepage", {});
   } catch (err) {
@@ -71,7 +71,7 @@ router.get("/getRecipe", async (req, res) => {
   res.send(recipe);
 });
 
-router.get("/myrecipes", withAuth, async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
