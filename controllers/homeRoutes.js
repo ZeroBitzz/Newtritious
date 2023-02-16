@@ -35,7 +35,6 @@ router.get("/signup", (req, res) => {
 router.get("/getRecipe", async (req, res) => {
   const {cuisine, tolerances, maxCalories, diet} = req.query;
   const recipe = await getRecipe(cuisine, tolerances, maxCalories, diet)
-  // res.render()
   res.send(recipe)
 });
 
