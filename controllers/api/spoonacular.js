@@ -1,4 +1,4 @@
-
+const mysql = require('mysql2/promise')
 require('dotenv').config()
 
 exports.getRecipe = async function (cuisine, diet, tolerances, maxCalories) {
@@ -14,13 +14,22 @@ exports.getRecipe = async function (cuisine, diet, tolerances, maxCalories) {
       tolerances: tolerances,
       calories: maxCalories,
     };
-    console.log(apiKey)
 
+    const connection = await mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: '32289216',
+        database: 'newtritious_db'
+    })
+    const [rows] = await connection.execute('SELECT * FROM user WHERE id = ?', [randomRecipeId]);
+    const recipeName = rows[0].name;
+    console.log(`Recipe name: ${recipeName}`)
+    
     let queryString = new URLSearchParams(parameters).toString();
     await fetch(`${baseUrl}/complexSearch?${queryString}`)
     .then(response => response.json())
     .then(data => {
-            randomRecipeId = data.results[Math.floor(Math.random() * data.results.length)].id;
+        randomRecipeId = data.results[Math.floor(Math.random() * data.results.length)].id;
     })
     await fetch(`${baseUrl}/${randomRecipeId}/information?apiKey=${apiKey}`)
     .then(response => response.json())
