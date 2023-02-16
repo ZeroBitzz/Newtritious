@@ -1,23 +1,27 @@
-
-  <header id="header">
+<div id="flexbox">
+  <header id="recipieHeader">
     <div id="headerDiv">
-      <button class="headerBtn1"><a href="/preferences">Profile</a></button>
-      <button class="headerBtn2"><a href="/myrecipes">My Recipes</a></button>
-
+      <button class="headerBtn1">Home</button>
+      <button class="headerBtn2">preferences</button>
     </div>
   </header>
-    <div id="asideDiv">
-      <aside id="aside">
-        <p id="asidePtag" class="animate-character">Create a recipe based on
-          restrictions.</p>
-      </aside>
-            {{#if logged_in}}
-        <a href="/preferences">Preferences</a>
-        |
-        <button class="no-button" id="logout">Logout</button>
-
-      {{else}}
-      <button><a class="LoginSignupCard" href="/login">Login</a></button>
-      <button><a id="signupCard" href="/signup"> Sign Up</a></button>
-      {{/if}}
+  <body id="body">
+    <div id="cardsDiv">
+      <card id="changeDietRecipie">
+        <p>recipie 1</p>
+      </card>
+      <card id="changeAllergiesRecipie">
+        <p>recipie 2</p>
+      </card>
+      <card id="changePasswordRecipie">
+        <p>recipie 3</p>
+      </card>
     </div>
+    ​
+  </body>
+  <footer id="recipieFooter">
+    <div id="footerDiv">
+      <p>Thank you for using Newtricious🌱</p>
+    </div>
+  </footer>
+</div>
