@@ -26,7 +26,7 @@ const userRestrictions = async (event) => {
   //   }
 
   if (allergies && cuisine && diet) {
-    document.location.replace("/myrecipes");
+    document.location.replace("/myRecipes");
   } else {
     alert(response.statusText);
   }

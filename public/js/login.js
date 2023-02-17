@@ -16,7 +16,7 @@ const loginFormHandler = async (event) => {
     if (response.ok) {
       console.log("is it working?");
       // If successful, redirect the browser to the profile page
-      document.location.replace("/myrecipes");
+      document.location.replace("preferences");
     } else {
       alert(response.statusText);
     }
