@@ -5,9 +5,9 @@ const loginFormHandler = async (event) => {
   const username = document.getElementById("username-login").value.trim();
   const password = document.getElementById("password-login").value.trim();
   if (username && password) {
-    console.log(username, password);
+    console.log("testing again");
     // Send a POST request to the API endpoint
-    const response = await fetch("/login", {
+    const response = await fetch("/api/users/login", {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
@@ -16,7 +16,7 @@ const loginFormHandler = async (event) => {
     if (response.ok) {
       console.log("is it working?");
       // If successful, redirect the browser to the profile page
-      document.location.replace("/myrecipes");
+      document.location.replace("myRecipes/");
     } else {
       alert(response.statusText);
     }

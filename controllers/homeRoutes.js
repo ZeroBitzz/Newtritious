@@ -3,7 +3,7 @@ const { User } = require("../models");
 const withAuth = require("../utils/auth");
 const { getRecipe } = require("./api/spoonacular");
 
-router.get("/nothing", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     res.render("homepage", {});
   } catch (err) {
@@ -14,51 +14,19 @@ router.get("/nothing", async (req, res) => {
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect("/myrecipes");
+    res.redirect("/myRecipes");
     return;
   } else {
     res.render("login");
   }
 });
 
-//to login
-router.post("/login", async (req, res) => {
-  try {
-    const userData = await User.findOne({
-      where: { username: req.body.username },
-    });
-    if (!userData) {
-      res
-        .status(400)
-        .json({ message: "Incorrect username or password, please try again" });
-      return;
-    }
 
-    const validPassword = await userData.checkPassword(req.body.password);
-
-    if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: "Incorrect username or password, please try again" });
-      return;
-    }
-
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-      console.log(userData.username);
-
-      // res.json({ user: userData, message: "You are now logged in!" });
-    });
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
 
 router.get("/signup", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect("/myrecipes").json({ message: "You are already logged in. " });
+    res.redirect("/myRecipes").json({ message: "You are already logged in. " });
     return;
   }
 
@@ -81,7 +49,7 @@ router.get("/", withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    res.render("myrecipes", {
+    res.render("myRecipes", {
       ...user,
       logged_in: true,
     });

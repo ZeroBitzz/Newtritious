@@ -5,6 +5,42 @@ router.get("/", async (req, res) => {
   console.log("just checking");
 });
 
+//to login
+router.post("/login", async (req, res) => {
+  try {
+    const userData = await User.findOne({
+      where: { username: req.body.username },
+    });
+    console.log("new test");
+    if (!userData) {
+      res
+        .status(400)
+        .json({ message: "Incorrect username or password, please try again" });
+      return;
+    }
+
+    const validPassword = await userData.checkPassword(req.body.password);
+
+    if (!validPassword) {
+      res
+        .status(400)
+        .json({ message: "Incorrect username or password, please try again" });
+      return;
+    }
+
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+      console.log(userData.username);
+
+      res.json({ user: userData, message: "You are now logged in!" });
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 //to create a new user
 router.post("/", async (req, res) => {
   try {
@@ -25,7 +61,7 @@ router.post("/", async (req, res) => {
 //to create a new user's allergies
 router.post("/allergies", async (req, res) => {
   try {
-    const userId = 2;
+    const userId = req.session.user_id;
     console.log("++++ ============");
 
     const allergyData = await UserAllergies.create({
@@ -38,7 +74,7 @@ router.post("/allergies", async (req, res) => {
     });
     res.status(204).json(allergyData);
   } catch (err) {
-    console.log(err)
+    console.log(err);
     res.status(400).json(err);
   }
 });
@@ -46,7 +82,7 @@ router.post("/allergies", async (req, res) => {
 // to create a new user's diets
 router.post("/diets", async (req, res) => {
   try {
-    const userId = 2;
+    const userId = req.session.user_id;
     console.log("======== +++++ ========");
     const dietData = await UserDiet.create({
       user_id: userId,
@@ -66,7 +102,7 @@ router.post("/diets", async (req, res) => {
 // //create a new user's cuisines
 router.post("/cuisines", async (req, res) => {
   try {
-    const userId = 2;
+    const userId = req.session.user_id;
     const cuisineData = await UserCuisine.create({
       user_id: userId,
       african: req.body.cuisine[1].african,
@@ -122,7 +158,5 @@ router.get("/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-
 
 module.exports = router;
