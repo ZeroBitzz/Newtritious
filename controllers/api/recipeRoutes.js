@@ -1,6 +1,5 @@
 const router = require("express").Router();
-//need to add UserDiet if get it to work (to line 3)
-const { User, UserAllergies, UserCuisine } = require("../../models");
+const { User, UserAllergies, UserCuisine, UserDiet } = require("../../models");
 const apiKey = process.env.API_KEY;
 const apiBase = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}`;
 // const apiAllergies = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&intolerances=${UserAllergies}`;
@@ -27,7 +26,7 @@ router.get("/", async (req, res) => {
     //   (k) => userData.userDiet.dataValues[k] === true
     // );
     console.log(usersCuisine);
-    const getApi = async (evnt) => {
+    const getApi = async (event) => {
       await fetch(
         `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&cuisine=${usersCuisine}`,
         {
