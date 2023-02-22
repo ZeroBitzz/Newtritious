@@ -28,7 +28,6 @@ router.post("/login", async (req, res) => {
       return;
     }
 
-
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
@@ -143,9 +142,9 @@ router.get("/:id", async (req, res) => {
   try {
     const userData = await User.findByPk(req.params.id, {
       // JOIN with UserAllergies, UserDiet, UserCuisine
-      include: [{ model: UserAllergies, as: "users_allergies" }],
-      include: [{ model: UserDiet, as: "users_diet" }],
-      include: [{ model: UserCuisine, as: "users_cuisine" }],
+      include: [{ model: UserAllergies }],
+      include: [{ model: UserDiet }],
+      include: [{ model: UserCuisine }],
     });
 
     if (!userData) {
