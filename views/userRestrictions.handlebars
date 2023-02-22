@@ -21,6 +21,7 @@
     {{#each diets as |diet|}}
       <label>
         <input  class= "diets-signup" id="diets-signup"
+        {{!-- add userId as hidden input --}}
           type="checkbox"
           name="{{diet}}"
           value="{{diet}}"

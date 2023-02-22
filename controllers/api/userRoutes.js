@@ -81,18 +81,21 @@ router.post("/allergies", async (req, res) => {
 router.post("/diets", async (req, res) => {
   try {
     const userId = req.session.user_id;
-    console.log("======== +++++ ========");
-    const dietData = await UserDiet.create({
-      user_id: userId,
-      paleo: req.body.diet[1].paleo,
-      vegan: req.body.diet[2].vegan,
-      vegetarian: req.body.diet[3].vegetarian,
-      keto: req.body.diet[4].keto,
-      calorie_restriction: req.body.diet[5].calorie_restriction,
-      gluten_free: req.body.diet[6].gluten_free,
-    });
+    console.log(req.body.diet);
+    // const dietData = await UserDiet.create({
+    //   user_id: userId,
+    //   paleo: req.body.diet[1].paleo,
+    //   vegan: req.body.diet[2].vegan,
+    //   vegetarian: req.body.diet[3].vegetarian,
+    //   keto: req.body.diet[4].keto,
+    //   calorie_restriction: req.body.diet[5].calorie_restriction,
+    //   gluten_free: req.body.diet[6].gluten_free,
+    // });
+
+    const dietData = await UserDiet.create(req.body);
     res.status(200).json(dietData);
   } catch (err) {
+    console.log(err);
     res.status(400).json(err);
   }
 });

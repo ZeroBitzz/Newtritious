@@ -16,14 +16,14 @@ const userRestrictions = async (event) => {
       headers: { "Content-Type": "application/json" },
     });
   }
-  //   if (diet) {
-  //     console.log("checking");
-  //     const dietRoute = await fetch(`/api/users/diets`, {
-  //       method: "POST",
-  //       body: JSON.stringify({ diet }),
-  //       headers: { "Content-Type": "application/json" },
-  //     });
-  //   }
+  if (diet) {
+    console.log("checking");
+    const dietRoute = await fetch(`/api/users/diets`, {
+      method: "POST",
+      body: JSON.stringify({ diet }),
+      headers: { "Content-Type": "application/json" },
+    });
+  }
 
   if (allergies && cuisine && diet) {
     document.location.replace("/myRecipes");
@@ -73,31 +73,16 @@ form.addEventListener("submit", function (e) {
     switch (currentFormId) {
       case "paleo":
         diet.push({ paleo: checkbox.checked });
-        break;
-    }
-    switch (currentFormId) {
       case "vegan":
         diet.push({ vegan: checkbox.checked });
-        break;
-    }
-    switch (currentFormId) {
       case "vegetarian":
         diet.push({ vegetarian: checkbox.checked });
-        break;
-    }
-    switch (currentFormId) {
       case "keto":
         diet.push({ keto: checkbox.checked });
-        break;
-    }
-    switch (currentFormId) {
-      case "calorieRestriction":
-        diet.push({ calorieRestriction: checkbox.checked });
-        break;
-    }
-    switch (currentFormId) {
-      case "glutenFree":
-        diet.push({ glutenFree: checkbox.checked });
+      case "calorie_restriction":
+        diet.push({ calorie_restriction: checkbox.checked });
+      case "gluten_free":
+        diet.push({ gluten_free: checkbox.checked });
         break;
     }
     switch (currentFormId) {

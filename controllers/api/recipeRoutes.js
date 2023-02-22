@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { User, UserAllergies, UserCuisine, UserDiet } = require("../../models");
+const axios = require("axios");
 const apiKey = process.env.API_KEY;
 const apiBase = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}`;
 // const apiAllergies = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&intolerances=${UserAllergies}`;
@@ -33,16 +34,13 @@ router.get("/", async (req, res) => {
     // );
     console.log(usersAllergies);
     const getApi = async (event) => {
-      await fetch(
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&cuisine=${usersCuisine}&intolerances=${usersAllergies}`,
-        {
-          method: "POST",
-          body: JSON.stringify(),
-          headers: { "Content-Type": "application/json" },
-        }
+      const apiData = await axios(
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&cuisine=${usersCuisine}&intolerances=${usersAllergies}`
       );
+      console.log(apiData.data.results);
     };
     getApi();
+    res.json(apiData.data.results);
   } catch (err) {
     res.status(400).json(err);
     console.log("this failed");
