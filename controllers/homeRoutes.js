@@ -14,19 +14,17 @@ router.get("/", async (req, res) => {
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect("/myRecipes");
+    res.redirect("/preferences");
     return;
   } else {
     res.render("login");
   }
 });
 
-
-
 router.get("/signup", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect("/myRecipes").json({ message: "You are already logged in. " });
+    res.redirect("/preferences").json({ message: "You are already logged in. " });
     return;
   }
 
@@ -49,7 +47,7 @@ router.get("/", withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    res.render("myRecipes", {
+    res.render("preferences", {
       ...user,
       logged_in: true,
     });
