@@ -24,7 +24,9 @@ router.get("/login", (req, res) => {
 router.get("/signup", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect("/preferences").json({ message: "You are already logged in. " });
+    res
+      .redirect("/preferences")
+      .json({ message: "You are already logged in. " });
     return;
   }
 
@@ -100,4 +102,9 @@ router.get("/userRestrictions", (req, res) => {
 router.get("/preferences", (req, res) => {
   res.render("preferences");
 });
+
+router.get("/myRecipes", (req, res) => {
+  res.render("myRecipes");
+});
+
 module.exports = router;
