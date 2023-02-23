@@ -1,27 +1,27 @@
- <header id="header">
-    <div id="headerDiv">
-      <button class="headerBtn1"><a href="/preferences">Profile</a></button>
-      <button class="headerBtn2"><a href="/myRecipes">Recipes</a></button>
+<header id="header">
+  <div id="headerDiv">
+    <button class="headerBtn1"><a href="/preferences">Profile</a></button>
+    <button class="headerBtn2"><a href="/myRecipes">Recipes</a></button>
 
+  </div>
+</header>
+<div id="asideDiv">
+  <aside id="aside">
+    <p id="asidePtag" class="animate-character">Create a recipe based on
+      restrictions.</p>
+    <div id="loginCard">
+      <card id="bounce">
+
+      </card>
     </div>
-  </header>
-    <div id="asideDiv">
-      <aside id="aside">
-        <p id="asidePtag" class="animate-character">Create a recipe based on
-          restrictions.</p>
-          <div id="loginCard">
-            <card id="bounce">
+  </aside>
+  {{#if logged_in}}
+    <a href="/preferences">Preferences</a>
+    |
+    <button class="no-button" id="logout">Logout</button>
 
-            </card>
-          </div>
-      </aside>
-            {{#if logged_in}}
-        <a href="/preferences">Preferences</a>
-        |
-        <button class="no-button" id="logout">Logout</button>
-
-      {{else}}
-      <button><a class="LoginSignupCard" href="/login">Login</a></button>
-      <button><a id="signupCard" href="/signup"> Sign Up</a></button>
-      {{/if}}
-    </div>
+  {{else}}
+    <button><a class="LoginSignupCard" href="/login">Login</a></button>
+    <button><a id="signupCard" href="/signup"> Sign Up</a></button>
+  {{/if}}
+</div>

@@ -11,7 +11,6 @@ router.post("/login", async (req, res) => {
     const userData = await User.findOne({
       where: { username: req.body.username },
     });
-    console.log("new test");
     if (!userData) {
       res
         .status(400)
@@ -27,7 +26,6 @@ router.post("/login", async (req, res) => {
         .json({ message: "Incorrect username or password, please try again" });
       return;
     }
-
 
     req.session.save(() => {
       req.session.user_id = userData.id;
@@ -83,18 +81,21 @@ router.post("/allergies", async (req, res) => {
 router.post("/diets", async (req, res) => {
   try {
     const userId = req.session.user_id;
-    console.log("======== +++++ ========");
-    const dietData = await UserDiet.create({
-      user_id: userId,
-      paleo: req.body.diet[1].paleo,
-      vegan: req.body.diet[2].vegan,
-      vegetarian: req.body.diet[3].vegetarian,
-      keto: req.body.diet[4].keto,
-      calorie_restriction: req.body.diet[5].calorie_restriction,
-      gluten_free: req.body.diet[6].gluten_free,
-    });
+    console.log(req.body.diet);
+    // const dietData = await UserDiet.create({
+    //   user_id: userId,
+    //   paleo: req.body.diet[1].paleo,
+    //   vegan: req.body.diet[2].vegan,
+    //   vegetarian: req.body.diet[3].vegetarian,
+    //   keto: req.body.diet[4].keto,
+    //   calorie_restriction: req.body.diet[5].calorie_restriction,
+    //   gluten_free: req.body.diet[6].gluten_free,
+    // });
+
+    const dietData = await UserDiet.create(req.body);
     res.status(200).json(dietData);
   } catch (err) {
+    console.log(err);
     res.status(400).json(err);
   }
 });
@@ -143,9 +144,9 @@ router.get("/:id", async (req, res) => {
   try {
     const userData = await User.findByPk(req.params.id, {
       // JOIN with UserAllergies, UserDiet, UserCuisine
-      include: [{ model: UserAllergies, as: "users_allergies" }],
-      include: [{ model: UserDiet, as: "users_diet" }],
-      include: [{ model: UserCuisine, as: "users_cuisine" }],
+      include: [{ model: UserAllergies }],
+      include: [{ model: UserDiet }],
+      include: [{ model: UserCuisine }],
     });
 
     if (!userData) {
