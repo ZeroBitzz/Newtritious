@@ -1,14 +1,11 @@
 # Newtritious
-Do you want to live slightly longer? Use this app and you probably will.
+Do you want to live longer and healthier? Use this app and you probably will!
 
 ## Description
 Get recipes for food based on certain preferences, such as diet, calorie limits, etc. and save them for later if you create an account with this app!
 
-## Screenshot
-Nothing for now
-
-## Live Url Link
-Nothing for now
+## Current state of app
+Live links and upkeep are no longer being supported, feel free to check out the code though!
 
 ## Licence
 MIT
